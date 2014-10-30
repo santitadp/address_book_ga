@@ -22,22 +22,22 @@ end
 
 def add_entry
 # Prompt entry & add data entry into hash
-entry = {}
+	entry = {}
 
-puts "CREATE NEW ENTRY"
-puts "First name: "
-entry[:first_name] = gets.chomp
+	puts "CREATE NEW ENTRY"
+	puts "First name: "
+	entry[:first_name] = gets.chomp
 
-puts "Last name: "
-entry[:last_name] = gets.chomp
+	puts "Last name: "
+	entry[:last_name] = gets.chomp
 
-puts "Phone number (no dashes): "
-entry[:phone] = gets.chomp
+	puts "Phone number (no dashes): "
+	entry[:phone] = gets.chomp
 
-puts "E-mail address: "
-entry[:email] = gets.chomp
+	puts "E-mail address: "
+	entry[:email] = gets.chomp
 
-return entry
+	return entry
 end
 
 # Print entry's first name & last name and index
@@ -64,14 +64,16 @@ end
 # Scold user if the selection is invalid
 # puts display_menu
 is_running = true
+addressbook = []
 
 while is_running
 	# print display_menu
 	menu_select = display_menu
 	# menu_select == "4"
 	# false
-	if 	menu_select == "1"
-		puts add_entry()
+	if 	menu_select == "1"	
+		addressbook.push add_entry
+		puts addressbook.inspect
 	elsif menu_select == "2"
 		puts addressbook.view_entry()
 	elsif menu_select == "3"
