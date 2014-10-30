@@ -62,28 +62,23 @@ end
 
 # Menu selection
 # Scold user if the selection is invalid
-puts display_menu
-puts "hello"
-menu_select = display_menu
-puts "bananas"
-
-addressbook = []
-
-if 	menu_select == "1"
-	puts add_entry()
-elsif menu_select == "2"
-	puts addressbook.view_entry()
-elsif menu_select == "3"
-	puts addressbook.delete_entry()
-else
-	puts "That's not on the menu."
-end
-
-# Exit display_menu
+# puts display_menu
 is_running = true
 
 while is_running
-	print display_menu
-	menu_select == "4"
-	false
+	# print display_menu
+	menu_select = display_menu
+	# menu_select == "4"
+	# false
+	if 	menu_select == "1"
+		puts add_entry()
+	elsif menu_select == "2"
+		puts addressbook.view_entry()
+	elsif menu_select == "3"
+		puts addressbook.delete_entry()
+	elsif menu_select == "4"
+		is_running = false
+	else
+		puts "That's not on the menu."
+	end
 end
