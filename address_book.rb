@@ -40,17 +40,6 @@ def add_entry
 	return entry
 end
 
-# Print entry's first name & last name and index
-def view_entry
-	entries.each_with_index do |entry, index|
-		puts "[#{index}] #{entry[:first_name]} #{entry[:last_name]}"
-
-		puts "Select entry to view: "
-		view_select = gets.chomp
-		puts entry(view_select)
-	end
-end
-
 # DEFINE delete_entry
 def delete_entry
 # Print keys and values for data: index, last_name, first_name
@@ -73,11 +62,13 @@ while is_running
 	# false
 	if 	menu_select == "1"	
 		addressbook.push add_entry
-		puts addressbook.inspect
+		puts addressbook.inspect ####
 	elsif menu_select == "2"
-		puts addressbook.view_entry()
+		addressbook.each_with_index do |x, index|
+		puts "#{index} #{x[:last_name]}, #{x[:first_name]}"
+		end
 	elsif menu_select == "3"
-		puts addressbook.delete_entry()
+		#
 	elsif menu_select == "4"
 		is_running = false
 	else
