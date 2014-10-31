@@ -68,7 +68,12 @@ while is_running
 		puts "#{index} #{x[:last_name]}, #{x[:first_name]}"
 		end
 	elsif menu_select == "3"
-		#
+		addressbook.each_with_index do |x, index|
+			puts "#{index} #{x[:last_name]}, #{x[:first_name]}"
+		end
+		puts "Select entry to delete: "
+		entry_delete = gets.chomp.to_i
+		addressbook.delete_at entry_delete
 	elsif menu_select == "4"
 		is_running = false
 	else
