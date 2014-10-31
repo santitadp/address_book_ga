@@ -49,9 +49,6 @@ end
 
 # BEGIN PROGRAM EXECUTION
 
-# Menu selection
-# Scold user if the selection is invalid
-# puts display_menu
 is_running = true
 addressbook = []
 
@@ -65,8 +62,14 @@ while is_running
 		puts addressbook.inspect ####
 	elsif menu_select == "2"
 		addressbook.each_with_index do |x, index|
-		puts "#{index} #{x[:last_name]}, #{x[:first_name]}"
+			puts "#{index} #{x[:last_name]}, #{x[:first_name]}"
 		end
+
+		puts "Which entry would you like to view? "
+		entry_view = gets.chomp.to_i
+		entry = addressbook[entry_view]
+		puts "#{entry[:last_name]},#{entry[:first_name]} #{entry[:phone]} #{entry[:email]}"
+
 	elsif menu_select == "3"
 		addressbook.each_with_index do |x, index|
 			puts "#{index} #{x[:last_name]}, #{x[:first_name]}"
