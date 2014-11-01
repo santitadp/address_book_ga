@@ -1,6 +1,6 @@
 # DEFINE METHODS & FUNCTIONS
 
-# DEFINE display_menu
+# Define displaying menu method
 def display_menu
 
 	puts """
@@ -18,8 +18,7 @@ def display_menu
 	return menu_select
 end
 
-# DEFINE gets_entry
-
+# Define adding entry method
 def add_entry
 # Prompt entry & add data entry into hash
 	entry = {}
@@ -40,12 +39,6 @@ def add_entry
 	return entry
 end
 
-# DEFINE delete_entry
-def delete_entry
-# Print keys and values for data: index, last_name, first_name
-# Prompt user for select_entry for deletion
-# Delete selected entry within hash
-end
 
 # BEGIN PROGRAM EXECUTION
 
@@ -55,11 +48,10 @@ addressbook = []
 while is_running
 	# print display_menu
 	menu_select = display_menu
-	# menu_select == "4"
-	# false
 	if 	menu_select == "1"	
 		addressbook.push add_entry
-		puts addressbook.inspect ####
+		puts addressbook.inspect
+
 	elsif menu_select == "2"
 		addressbook.each_with_index do |x, index|
 			puts "#{index} #{x[:last_name]}, #{x[:first_name]}"
@@ -68,15 +60,21 @@ while is_running
 		puts "Which entry would you like to view? "
 		entry_view = gets.chomp.to_i
 		entry = addressbook[entry_view]
-		puts "#{entry[:last_name]},#{entry[:first_name]} #{entry[:phone]} #{entry[:email]}"
+		puts """ 	
+			#{entry[:last_name]}
+			#{entry[:first_name]}
+			#{entry[:phone]}
+			#{entry[:email]}"""
 
 	elsif menu_select == "3"
 		addressbook.each_with_index do |x, index|
 			puts "#{index} #{x[:last_name]}, #{x[:first_name]}"
 		end
+
 		puts "Select entry to delete: "
 		entry_delete = gets.chomp.to_i
 		addressbook.delete_at entry_delete
+
 	elsif menu_select == "4"
 		is_running = false
 	else
