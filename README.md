@@ -1,21 +1,8 @@
 Personal Information Database Program
 =====================================
 
-In this program, users are welcomed to a main menu:
+This program is a part of GA web development's homework assignment.
 
-01	Create New Entry
-02	View Existing Entry
-03	Delete Existing Entry
-04	Quit Application
-
-Create New Entry:
-Users are prompted to enter their first name, last name, phone number, and e-mail.
-
-View Existing Entry:
-View a list of all previous entries in format:
-
-01	Doe, John
-02	Doe, Jane
-
-Users are prompted to select entry they would like to view.
+In this program, users are welcomed to a main menu with the option to 
+(1) Create New Entry, (2) View All Entires, (3) Delete Entry, (4) Quit.
 
